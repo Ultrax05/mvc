@@ -6,7 +6,7 @@ namespace MyApp.Vista
 {
     public class ConsoleView
     {
-        private List<Prisoner> prisoners = new List<Prisoner>();
+        private List<Criminal> prisoners = new List<Criminal>();
 
         public void ShowMemory()
         {
@@ -16,33 +16,36 @@ namespace MyApp.Vista
 
         public void AddPrisoner()
         {
-            Console.Write("Ingrese el nombre del preso: ");
+            Console.Write("Ingrese el nombre del criminal: ");
             string name = Console.ReadLine();
 
-            Console.Write("Ingrese el crimen cometido: ");
-            string crime = Console.ReadLine();
+            Console.Write("Ingrese el tipo de crimen cometido: ");
+            string crimeTypeInput = Console.ReadLine();
 
-            Console.Write("Ingrese la sentencia: ");
-            string sentence = Console.ReadLine();
+            if (!Enum.TryParse<CrimeType>(crimeTypeInput, true, out var crimeType))
+            {
+                Console.WriteLine("Tipo de crimen inválido. Inténtelo de nuevo.");
+                return;
+            }
 
-            var newPrisoner = new Prisoner(name, crime, sentence);
-            prisoners.Add(newPrisoner);
+            var newCriminal = new Criminal(name) { CrimeType = crimeType };
+            prisoners.Add(newCriminal);
 
-            Console.WriteLine($"Preso {newPrisoner.Name} agregado con éxito.");
+            Console.WriteLine($"Criminal {newCriminal.Name} agregado con éxito.");
         }
 
         public void ListPrisoners()
         {
             if (prisoners.Count == 0)
             {
-                Console.WriteLine("No hay presos registrados.");
+                Console.WriteLine("No hay criminales registrados.");
                 return;
             }
 
-            Console.WriteLine("Lista de presos:");
-            foreach (var prisoner in prisoners)
+            Console.WriteLine("Lista de criminales:");
+            foreach (var criminal in prisoners)
             {
-                Console.WriteLine($"Nombre: {prisoner.Name}, Crimen: {prisoner.Crime}, Sentencia: {prisoner.Sentence}");
+                Console.WriteLine($"Nombre: {criminal.Name}, Tipo de Crimen: {criminal.CrimeType}");
             }
         }
     }
