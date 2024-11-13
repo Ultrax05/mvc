@@ -18,7 +18,15 @@ namespace MyApp.Vista
     public static CrimeType GetCrimeTypeFromUser()
     {
         Console.WriteLine("Selecciona el tipo de crimen: 1. Robo 2. Agresión 3. Fraude 4. Otro");
+    try
+    {
         return Enum.Parse<CrimeType>(Console.ReadLine());
+    }
+    catch (ArgumentException)
+    {
+        Console.WriteLine("Opción no válida.");
+        return CrimeType.Otro;  // Asignar un valor predeterminado
+    }
     }
 
     public static void ShowMemory(Memory memory)
