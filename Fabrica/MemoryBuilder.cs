@@ -5,23 +5,28 @@ namespace MyApp.Fabrica
 {
     public class MemoryBuilder
     {
-        private readonly Memory _memory = new Memory();
+        private string _content;
+        private string _emotion;
 
         public MemoryBuilder SetContent(string content)
         {
-            _memory.Content = content ?? throw new ArgumentNullException(nameof(content));
+            _content = content ?? throw new ArgumentNullException(nameof(content));
             return this;
         }
 
         public MemoryBuilder SetEmotion(string emotion)
         {
-            _memory.Emotion = emotion ?? throw new ArgumentNullException(nameof(emotion));
+            _emotion = emotion ?? throw new ArgumentNullException(nameof(emotion));
             return this;
         }
 
         public Memory Build()
         {
-            return _memory; // Ahora 'Content' y 'Emotion' se aseguran de estar inicializados
+            // Asegúrate de que ambas propiedades estén configuradas antes de crear el objeto
+            if (_content == null || _emotion == null)
+                throw new InvalidOperationException("Ambas propiedades 'Content' y 'Emotion' deben ser establecidas");
+
+            return new Memory(_content, _emotion);
         }
     }
 }
