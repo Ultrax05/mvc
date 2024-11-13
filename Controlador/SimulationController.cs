@@ -1,9 +1,6 @@
 // Controlador/SimulationController.cs
-using ProyectoCognify.Modelo;
-using ProyectoCognify.Fabrica;
-using ProyectoCognify.Vista;
-
-namespace ProyectoCognify.Controlador
+using MyApp.Modelo;
+namespace MyApp.Controlador
 {
     public class SimulationController
     {
