@@ -1,38 +1,16 @@
 // Vista/ConsoleView.cs
-using MyApp.Controlador;  // Importa el controlador
-using MyApp.Modelo; // Para usar CrimeType, Memory, etc.
+using MyApp.Modelo;
 
 namespace MyApp.Vista
 {
     public class ConsoleView
-{
-    public static void Run()
-{
-    Console.WriteLine("Ejecutando el método Run...");
-    var crimeType = GetCrimeTypeFromUser();
-    var memory = new Memory { Content = "Recuerdo del crimen", Emotion = "Sentimiento" };
-    ShowMemory(memory);
-}
-
-
-    public static CrimeType GetCrimeTypeFromUser()
     {
-        Console.WriteLine("Selecciona el tipo de crimen: 1. Robo 2. Agresión 3. Fraude 4. Otro");
-    try
-    {
-        return Enum.Parse<CrimeType>(Console.ReadLine());
-    }
-    catch (ArgumentException)
-    {
-        Console.WriteLine("Opción no válida.");
-        return CrimeType.Otro;  // Asignar un valor predeterminado
-    }
-    }
-
-    public static void ShowMemory(Memory memory)
-    {
-        Console.WriteLine($"Recuerdo: {memory.Content} | Emoción: {memory.Emotion}");
+        public void ShowMemory()
+        {
+            // Asegúrate de pasar 'content' y 'emotion' al crear Memory
+            var memory = new Memory("Recuerdo del crimen", "Sentimiento de culpa");
+            Console.WriteLine($"Contenido: {memory.Content}, Emoción: {memory.Emotion}");
+        }
     }
 }
 
-}
