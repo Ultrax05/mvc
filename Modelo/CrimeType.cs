@@ -2,10 +2,10 @@
 namespace MyApp.Modelo
 {
     public enum CrimeType
-    {
-        Theft,
-        Assault,
-        Fraud,
-        Other
-    }
+{
+    Robo,
+    Agresión,
+    Fraude,
+    Otro  // Agregar este valor al enum
+}
 }
