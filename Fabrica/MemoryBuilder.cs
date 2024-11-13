@@ -5,23 +5,26 @@ namespace MyApp.Fabrica
 {
     public class MemoryBuilder
     {
-        private readonly Memory _memory = new Memory();
+        private string _content;
+        private string _emotion;
 
+        // Setters para asignar los valores
         public MemoryBuilder SetContent(string content)
         {
-            _memory.Content = content;
+            _content = content;
             return this;
         }
 
         public MemoryBuilder SetEmotion(string emotion)
         {
-            _memory.Emotion = emotion;
+            _emotion = emotion;
             return this;
         }
 
+        // Método Build que devuelve el Memory con los parámetros requeridos
         public Memory Build()
         {
-            return _memory;
+            return new Memory(_content, _emotion);  // Se pasa content y emotion al constructor
         }
     }
 }
