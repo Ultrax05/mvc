@@ -1,7 +1,7 @@
 // Fabrica/MemoryBuilder.cs
-using ProyectoCognify.Modelo;
+using MyApp.Modelo;
 
-namespace ProyectoCognify.Fabrica
+namespace MyApp.Fabrica
 {
     public class MemoryBuilder
     {
