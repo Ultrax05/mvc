@@ -7,11 +7,13 @@ namespace MyApp.Vista
     public class ConsoleView
 {
     public static void Run()
-    {
-        var crimeType = GetCrimeTypeFromUser();
-        var memory = new Memory { Content = "Recuerdo del crimen", Emotion = "Sentimiento" };
-        ShowMemory(memory);
-    }
+{
+    Console.WriteLine("Ejecutando el método Run...");
+    var crimeType = GetCrimeTypeFromUser();
+    var memory = new Memory { Content = "Recuerdo del crimen", Emotion = "Sentimiento" };
+    ShowMemory(memory);
+}
+
 
     public static CrimeType GetCrimeTypeFromUser()
     {
