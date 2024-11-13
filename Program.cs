@@ -1,14 +1,11 @@
-using MyApp.Modelo;
 using System;
 using System.Collections.Generic;
+using MyApp.Modelo;
 
 namespace MyApp
 {
     public class Program
     {
-        var criminal = new Criminal("John Doe", CrimeType.Robo);
-        Console.WriteLine($"Criminal creado: Nombre = {criminal.Name}, Tipo de Crimen = {criminal.CrimeType}");
-
         private static List<Criminal> criminales = new List<Criminal>();
 
         public static void Main(string[] args)
@@ -58,13 +55,19 @@ namespace MyApp
                 _ => CrimeType.Otro
             };
 
-            Criminal nuevoCriminal = new Criminal(nombre) { CrimeType = tipoCrimen };
+            Criminal nuevoCriminal = new Criminal(nombre, tipoCrimen); // Constructor modificado
             criminales.Add(nuevoCriminal);
             Console.WriteLine($"Criminal {nombre} agregado exitosamente.\n");
         }
 
         private static void ListarCriminales()
         {
+            if (criminales.Count == 0)
+            {
+                Console.WriteLine("No hay criminales registrados.");
+                return;
+            }
+
             Console.WriteLine("Lista de criminales:");
             foreach (var criminal in criminales)
             {
@@ -73,4 +76,3 @@ namespace MyApp
         }
     }
 }
-
