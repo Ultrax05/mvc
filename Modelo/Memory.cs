@@ -3,7 +3,7 @@ namespace MyApp.Modelo
 {
     public class Memory
     {
-        public string Content { get; set; }
-        public string Emotion { get; set; }
+        public required string Content { get; set; }
+        public required string Emotion { get; set; }
     }
 }
