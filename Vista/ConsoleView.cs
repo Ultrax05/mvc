@@ -1,14 +1,19 @@
 // Vista/ConsoleView.cs
-public class ConsoleView
-{
-    public static CrimeType GetCrimeTypeFromUser()
-    {
-        Console.WriteLine("Selecciona el tipo de crimen: 1. Robo 2. Agresión 3. Fraude 4. Otro");
-        return Enum.Parse<CrimeType>(Console.ReadLine());
-    }
+using ProyectoCognify.Modelo;
 
-    public static void ShowMemory(Memory memory)
+namespace ProyectoCognify.Vista
+{
+    public class ConsoleView
     {
-        Console.WriteLine($"Recuerdo: {memory.Content} | Emoción: {memory.Emotion}");
+        public static CrimeType GetCrimeTypeFromUser()
+        {
+            Console.WriteLine("Selecciona el tipo de crimen: 1. Robo 2. Agresión 3. Fraude 4. Otro");
+            return Enum.Parse<CrimeType>(Console.ReadLine());
+        }
+
+        public static void ShowMemory(Memory memory)
+        {
+            Console.WriteLine($"Recuerdo: {memory.Content} | Emoción: {memory.Emotion}");
+        }
     }
 }
