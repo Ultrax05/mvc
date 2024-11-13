@@ -5,9 +5,7 @@ namespace MyApp
     {
         public static void Main(string[] args)
         {
-            // Crear la instancia de la vista y ejecutar el programa
-            ConsoleView view = new ConsoleView();
-            view.Run();
+            ConsoleView.Run();  // Esto es correcto para un método estático
         }
     }
 }
