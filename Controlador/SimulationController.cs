@@ -1,6 +1,7 @@
 // Controlador/SimulationController.cs
 using MyApp.Modelo;
 using MyApp.Fabrica;  // Importa la clase de la fábrica
+using MyApp.Vista;  // Agrega esta línea si no está presente.
 
 namespace MyApp.Controlador
 {
