@@ -1,4 +1,6 @@
 // Program.cs
+using ProyectoCognify.Controlador;
+
 class Program
 {
     static void Main()
