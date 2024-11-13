@@ -1,5 +1,5 @@
 // Modelo/CrimeType.cs
-namespace ProyectoCognify.Modelo
+namespace MyApp.Modelo
 {
     public enum CrimeType
     {
