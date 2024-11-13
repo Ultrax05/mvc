@@ -1,5 +1,5 @@
 // Modelo/Simulation.cs
-namespace ProyectoCognify.Modelo
+using MyApp.Modelo; 
 {
     public class Simulation
     {
