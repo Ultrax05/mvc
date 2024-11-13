@@ -8,7 +8,6 @@ namespace MyApp.Fabrica
         private string _content;
         private string _emotion;
 
-        // Setters para asignar los valores
         public MemoryBuilder SetContent(string content)
         {
             _content = content;
@@ -21,10 +20,11 @@ namespace MyApp.Fabrica
             return this;
         }
 
-        // Método Build que devuelve el Memory con los parámetros requeridos
+        // Cambiar para pasar content y emotion al constructor
         public Memory Build()
         {
-            return new Memory(_content, _emotion);  // Se pasa content y emotion al constructor
+            return new Memory(_content, _emotion);  // Constructor con los parámetros correctos
         }
     }
 }
+
