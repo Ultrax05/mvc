@@ -5,8 +5,8 @@ namespace MyApp.Fabrica
 {
     public class MemoryBuilder
     {
-        private string _content;
-        private string _emotion;
+        private string? _content;
+        private string? _emotion;
 
         public MemoryBuilder SetContent(string content)
         {
