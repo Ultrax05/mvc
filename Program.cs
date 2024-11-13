@@ -1,11 +1,13 @@
-// Program.cs
-using ProyectoCognify.Controlador;
-
-class Program
+using MyApp.Vista; // Referencia a la clase Vista
+namespace MyApp
 {
-    static void Main()
+    public class Program
     {
-        var controller = new SimulationController();
-        controller.IniciarSimulacion();
+        public static void Main(string[] args)
+        {
+            // Crear la instancia de la vista y ejecutar el programa
+            ConsoleView view = new ConsoleView();
+            view.Run();
+        }
     }
 }
