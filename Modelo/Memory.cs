@@ -1,5 +1,5 @@
 // Modelo/Memory.cs
-namespace ProyectoCognify.Modelo
+namespace MyApp.Modelo
 {
     public class Memory
     {
