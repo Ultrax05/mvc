@@ -1,37 +1,10 @@
 // Modelo/Criminal.cs
-public class Criminal
+namespace ProyectoCognify.Modelo
 {
-    public string Name { get; set; }
-    public CrimeType CrimeType { get; set; }
-    public List<Memory> Memories { get; set; } = new List<Memory>();
-}
-
-// Modelo/Memory.cs
-public class Memory
-{
-    public string Content { get; set; }
-    public string Emotion { get; set; }
-}
-
-// Modelo/Simulation.cs
-public class Simulation
-{
-    private static Simulation _instance; // Implementación Singleton
-    public static Simulation Instance => _instance ??= new Simulation();
-    
-    private Simulation() {} // Constructor privado
-
-    public void StartSimulation(Criminal criminal)
+    public class Criminal
     {
-        Console.WriteLine($"Simulación iniciada para el criminal: {criminal.Name}");
+        public string Name { get; set; }
+        public CrimeType CrimeType { get; set; }
+        public List<Memory> Memories { get; set; } = new List<Memory>();
     }
-}
-
-// Modelo/CrimeType.cs
-public enum CrimeType
-{
-    Theft,
-    Assault,
-    Fraud,
-    Other
 }
