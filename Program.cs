@@ -5,7 +5,7 @@ namespace MyApp
     {
         public static void Main(string[] args)
         {
-            ConsoleView.Run();  // Esto es correcto para un método estático
+            ConsoleView.ShowMemory();  // Esto es correcto para un método estático
         }
     }
 }
