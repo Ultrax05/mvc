@@ -1,5 +1,6 @@
 // Modelo/Simulation.cs
-using MyApp.Modelo; 
+using MyApp.Modelo;
+namespace MyApp.Modelo
 {
     public class Simulation
     {
