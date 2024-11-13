@@ -1,5 +1,6 @@
 // Vista/ConsoleView.cs
 using MyApp.Controlador;  // Importa el controlador
+using MyApp.Modelo; // Para usar CrimeType, Memory, etc.
 
 namespace MyApp.Vista
 {
