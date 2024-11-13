@@ -1,22 +1,27 @@
 // Fabrica/MemoryBuilder.cs
-public class MemoryBuilder
+using ProyectoCognify.Modelo;
+
+namespace ProyectoCognify.Fabrica
 {
-    private readonly Memory _memory = new Memory();
-
-    public MemoryBuilder SetContent(string content)
+    public class MemoryBuilder
     {
-        _memory.Content = content;
-        return this;
-    }
+        private readonly Memory _memory = new Memory();
 
-    public MemoryBuilder SetEmotion(string emotion)
-    {
-        _memory.Emotion = emotion;
-        return this;
-    }
+        public MemoryBuilder SetContent(string content)
+        {
+            _memory.Content = content;
+            return this;
+        }
 
-    public Memory Build()
-    {
-        return _memory;
+        public MemoryBuilder SetEmotion(string emotion)
+        {
+            _memory.Emotion = emotion;
+            return this;
+        }
+
+        public Memory Build()
+        {
+            return _memory;
+        }
     }
 }
