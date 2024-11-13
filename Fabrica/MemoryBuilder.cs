@@ -5,26 +5,23 @@ namespace MyApp.Fabrica
 {
     public class MemoryBuilder
     {
-        private string _content;
-        private string _emotion;
+        private readonly Memory _memory = new Memory();
 
         public MemoryBuilder SetContent(string content)
         {
-            _content = content;
+            _memory.Content = content ?? throw new ArgumentNullException(nameof(content));
             return this;
         }
 
         public MemoryBuilder SetEmotion(string emotion)
         {
-            _emotion = emotion;
+            _memory.Emotion = emotion ?? throw new ArgumentNullException(nameof(emotion));
             return this;
         }
 
-        // Cambiar para pasar content y emotion al constructor
         public Memory Build()
         {
-            return new Memory(_content, _emotion);  // Constructor con los parámetros correctos
+            return _memory; // Ahora 'Content' y 'Emotion' se aseguran de estar inicializados
         }
     }
 }
-
