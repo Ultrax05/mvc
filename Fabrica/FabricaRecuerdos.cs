@@ -1,18 +1,23 @@
 // Fabrica/FabricaRecuerdos.cs
-public abstract class FabricaRecuerdos
-{
-    public abstract Memory CrearRecuerdo(CrimeType crimeType);
-}
+using ProyectoCognify.Modelo;
 
-public class FabricaRecuerdosConcreta : FabricaRecuerdos
+namespace ProyectoCognify.Fabrica
 {
-    public override Memory CrearRecuerdo(CrimeType crimeType)
+    public abstract class FabricaRecuerdos
     {
-        return crimeType switch
+        public abstract Memory CrearRecuerdo(CrimeType crimeType);
+    }
+
+    public class FabricaRecuerdosConcreta : FabricaRecuerdos
+    {
+        public override Memory CrearRecuerdo(CrimeType crimeType)
         {
-            CrimeType.Theft => new Memory { Content = "Robaste una tienda", Emotion = "Remordimiento" },
-            CrimeType.Assault => new Memory { Content = "Atacaste a una persona", Emotion = "Arrepentimiento" },
-            _ => new Memory { Content = "Cometiste un crimen", Emotion = "Reflexión" }
-        };
+            return crimeType switch
+            {
+                CrimeType.Theft => new Memory { Content = "Robaste una tienda", Emotion = "Remordimiento" },
+                CrimeType.Assault => new Memory { Content = "Atacaste a una persona", Emotion = "Arrepentimiento" },
+                _ => new Memory { Content = "Cometiste un crimen", Emotion = "Reflexión" }
+            };
+        }
     }
 }
