@@ -6,6 +6,9 @@ namespace MyApp
 {
     public class Program
     {
+        var criminal = new Criminal("John Doe", CrimeType.Robo);
+        Console.WriteLine($"Criminal creado: Nombre = {criminal.Name}, Tipo de Crimen = {criminal.CrimeType}");
+
         private static List<Criminal> criminales = new List<Criminal>();
 
         public static void Main(string[] args)
