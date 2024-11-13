@@ -1,7 +1,7 @@
 // Vista/ConsoleView.cs
-using ProyectoCognify.Modelo;
+using MyApp.Controlador;  // Importa el controlador
 
-namespace ProyectoCognify.Vista
+namespace MyApp.Vista
 {
     public class ConsoleView
     {
