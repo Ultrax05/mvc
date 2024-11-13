@@ -14,10 +14,11 @@ namespace MyApp.Fabrica
         {
             return crimeType switch
             {
-                CrimeType.Theft => new Memory { Content = "Robaste una tienda", Emotion = "Remordimiento" },
-                CrimeType.Assault => new Memory { Content = "Atacaste a una persona", Emotion = "Arrepentimiento" },
+                CrimeType.Robo => new Memory { Content = "Robaste una tienda", Emotion = "Remordimiento" },
+                CrimeType.Agresion => new Memory { Content = "Atacaste a una persona", Emotion = "Arrepentimiento" },
                 _ => new Memory { Content = "Cometiste un crimen", Emotion = "Reflexión" }
             };
         }
     }
 }
+
