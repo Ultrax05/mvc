@@ -1,4 +1,6 @@
 // Modelo/Criminal.cs
+using System;
+
 namespace MyApp.Modelo
 {
     public class Criminal
