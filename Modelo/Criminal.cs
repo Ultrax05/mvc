@@ -1,5 +1,5 @@
 // Modelo/Criminal.cs
-namespace ProyectoCognify.Modelo
+namespace MyApp.Modelo
 {
     public class Criminal
     {
