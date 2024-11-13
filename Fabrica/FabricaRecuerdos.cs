@@ -16,7 +16,7 @@ namespace MyApp.Fabrica
             {
                 CrimeType.Robo => new Memory { Content = "Robaste una tienda", Emotion = "Remordimiento" },
                 CrimeType.Agresion => new Memory { Content = "Atacaste a una persona", Emotion = "Arrepentimiento" },
-                _ => new Memory { Content = "Cometiste un crimen", Emotion = "Reflexión" }
+                _ => new Memory("Robaste una tienda", "Remordimiento")
             };
         }
     }
